@@ -26,17 +26,18 @@ int Full(Stack *S) {
 }
 
 void Pop(Stack *S, ItemType *x) {
-    if (S->Count==0)
-        cout<<"Stack masih kosong !"<<endl;
-    else {
+    if (S->Empty(S)) {
+         cout<<"Stack masih kosong !"<<endl;
+} else {
         --(S->Count);
         *x = S->Item[S->Count];
     }
 }
 
 void Push(ItemType x, Stack *S) {
-    if (S->Count==MAXSTACK)
+    if (S->Full(S)){
         cout << "Stack penuh! Data tidak dapat masuk!"<<endl;
+    }
     else {
         S->Item[S->Count]=x;
         ++(S->Count);
