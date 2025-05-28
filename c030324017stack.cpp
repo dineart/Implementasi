@@ -26,7 +26,7 @@ int Full(Stack *S) {
 }
 
 void Pop(Stack *S, ItemType *x) {
-    if (S->Empty(S)) {
+    if (Empty(S)) {
          cout<<"Stack masih kosong !"<<endl;
 } else {
         --(S->Count);
@@ -35,7 +35,7 @@ void Pop(Stack *S, ItemType *x) {
 }
 
 void Push(ItemType x, Stack *S) {
-    if (S->Full(S)){
+    if (Full(S)){
         cout << "Stack penuh! Data tidak dapat masuk!"<<endl;
     }
     else {
@@ -55,7 +55,7 @@ int main() {
     Stack S;
     ItemType x;
 
-    InitializeStack(&S);
+initializeStack(&S);
 
     Push(10, &S);
     Push(20, &S);
