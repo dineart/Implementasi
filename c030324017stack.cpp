@@ -49,3 +49,23 @@ void PrintStack(Stack *S) {
         cout << S->Item[i] << "";
     cout << endl;
 }
+
+int main() {
+    Stack S;
+    ItemType x;
+
+    InitializeStack(&S);
+
+    Push(10, &S);
+    Push(20, &S);
+    Push(30, &S);
+
+    PrintStack(&S);
+
+    Pop(&S, &x);
+    cout <<"Item yang di-pop:" << x << endl;
+
+    PrintStack(&S);
+
+    return 0;
+}
